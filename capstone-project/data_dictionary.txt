@@ -1,0 +1,47 @@
+Fact table: 
+f_immigration
+	- immigration_key (string) - primary key
+	- cicid (string) - unique number assigned to the traveller
+	- year (int) - year when a person arrived in the US
+	- month (int) - month when a person arrived in the US
+	- residence_country (string) - traveller's country of residence
+	- citizenship_country (string) - traveller's citizenship country
+	- arrival_date (date) - full arrival date (YYYY-mm-dd)
+	- arrival_port (string) - port (airport or sea port) where a person arrived to
+	- arrival_state (string) - US state (abbreviated) where a person arrived to
+	- arrival_mode (string) - mode of arrival: Air, Land, Sea
+	- departure_date (date) - date when a person left US (YYYY-mm-dd)
+	- visa_type (string) - type of visa, contains more detailed information for each visa category, e.g. B1, B2, 
+	- visa_category (string) - visa category: Business, Pleasure, Student
+	- age (int) - age in years
+	- birth_year (int) - birth year
+	- gender (char) - gender
+	
+Dimension tables:
+d_airport
+	- airport_key (string) - primary key
+    - identifier (string) - airport's identifier
+    - airport_name (string) - airport's name
+    - municipality (string) - city closest to the airport
+    - iata_code (string) - IATA airport code
+    - state_code (string) - US state where airport is located
+    - type (varchar) - type of airport: small, large, etc.
+	
+d_demographics
+	- demographics_key - primary key
+	- city (string) - city name
+	- state (string) - full name of  U.S. state
+	- median_age (decimal) - median age for the city
+	- male_population (int) - male population for the city
+	- female_population (int) - female population for the city
+	- total_population (int) - total population for the city
+	- num_veterans (int) - number of veterant
+	- foreign_born (int) - number of foreign born residents
+	- avg_household_size (decimal) - average size of a household
+	- state_code (string) - abbreviated state name
+	- race - race category
+	
+d_us_state
+	state_key - primary key
+	state_code - 2-letter state code
+	state_name - state's full name
